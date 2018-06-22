@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{5733E93A-95F1-469D-A5AE-79F6290D79E6}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TP02_EX01.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\..\Downloads\Embarcadero\Studio\Projets\TP02_EX02.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TP02_EXSUPP01.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TP02_EXSUPP02.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TP02_EXSUPP03.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TP02_EX01">
+        <MSBuild Projects="TP02_EX01.dproj"/>
+    </Target>
+    <Target Name="TP02_EX01:Clean">
+        <MSBuild Projects="TP02_EX01.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TP02_EX01:Make">
+        <MSBuild Projects="TP02_EX01.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TP02_EX02">
+        <MSBuild Projects="..\..\..\..\Downloads\Embarcadero\Studio\Projets\TP02_EX02.dproj"/>
+    </Target>
+    <Target Name="TP02_EX02:Clean">
+        <MSBuild Projects="..\..\..\..\Downloads\Embarcadero\Studio\Projets\TP02_EX02.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TP02_EX02:Make">
+        <MSBuild Projects="..\..\..\..\Downloads\Embarcadero\Studio\Projets\TP02_EX02.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TP02_EXSUPP01">
+        <MSBuild Projects="TP02_EXSUPP01.dproj"/>
+    </Target>
+    <Target Name="TP02_EXSUPP01:Clean">
+        <MSBuild Projects="TP02_EXSUPP01.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TP02_EXSUPP01:Make">
+        <MSBuild Projects="TP02_EXSUPP01.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TP02_EXSUPP02">
+        <MSBuild Projects="TP02_EXSUPP02.dproj"/>
+    </Target>
+    <Target Name="TP02_EXSUPP02:Clean">
+        <MSBuild Projects="TP02_EXSUPP02.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TP02_EXSUPP02:Make">
+        <MSBuild Projects="TP02_EXSUPP02.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TP02_EXSUPP03">
+        <MSBuild Projects="TP02_EXSUPP03.dproj"/>
+    </Target>
+    <Target Name="TP02_EXSUPP03:Clean">
+        <MSBuild Projects="TP02_EXSUPP03.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TP02_EXSUPP03:Make">
+        <MSBuild Projects="TP02_EXSUPP03.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TP02_EX01;TP02_EX02;TP02_EXSUPP01;TP02_EXSUPP02;TP02_EXSUPP03"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TP02_EX01:Clean;TP02_EX02:Clean;TP02_EXSUPP01:Clean;TP02_EXSUPP02:Clean;TP02_EXSUPP03:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TP02_EX01:Make;TP02_EX02:Make;TP02_EXSUPP01:Make;TP02_EXSUPP02:Make;TP02_EXSUPP03:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
